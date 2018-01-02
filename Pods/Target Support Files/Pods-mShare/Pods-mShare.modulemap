@@ -1,0 +1,6 @@
+framework module Pods_mShare {
+  umbrella header "Pods-mShare-umbrella.h"
+
+  export *
+  module * { export * }
+}
