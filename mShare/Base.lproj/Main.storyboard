@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -37,11 +42,131 @@
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="hta-oj-The" id="SWl-Ym-T1v"/>
+                        <segue destination="zJc-Un-i3c" kind="show" identifier="tabViewController" id="jSK-gl-lKb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="-15.742128935532236"/>
+            <point key="canvasLocation" x="-553" y="-834"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="u9n-fm-R0q">
+            <objects>
+                <viewController id="GVJ-4K-UAT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wBo-2z-gcV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="HIV-QI-BTI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="Oyl-DR-kF2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHM-t1-vM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070" y="-462"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="ebc-ho-mMz">
+            <objects>
+                <viewController id="gd9-5C-pk0" customClass="DashBoardViewController" customModule="mShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vjz-7w-w3B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0p5-V3-bI9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="uck-Wp-5kg"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDa-CN-pbp">
+                                <rect key="frame" x="0.0" y="44" width="375" height="130"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wkJ-OI-UG3">
+                                        <rect key="frame" x="5" y="5" width="169.5" height="120"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_email.png" translatesAutoresizingMaskIntoConstraints="NO" id="HTW-Pg-5Lp">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="120"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="pLu-RT-lP2"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ckI-Zg-Igb">
+                                                <rect key="frame" x="44" y="0.0" width="125.5" height="56"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manikandan " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgp-g3-n1f">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="23"/>
+                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mckuttan@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rY9-Kf-WZI">
+                                                        <rect key="frame" x="0.0" y="33" width="125.5" height="23"/>
+                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="CrZ-8Y-mCA"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wkJ-OI-UG3" firstAttribute="top" secondItem="dDa-CN-pbp" secondAttribute="top" constant="5" id="Tb7-4Y-h7t"/>
+                                    <constraint firstAttribute="bottom" secondItem="wkJ-OI-UG3" secondAttribute="bottom" constant="5" id="UR3-Qg-7xS"/>
+                                    <constraint firstItem="wkJ-OI-UG3" firstAttribute="leading" secondItem="dDa-CN-pbp" secondAttribute="leading" constant="5" id="pxl-ri-9OM"/>
+                                    <constraint firstAttribute="height" constant="130" id="yyz-Yn-I2J"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0p5-V3-bI9" secondAttribute="trailing" id="Gj2-dF-XYi"/>
+                            <constraint firstItem="0p5-V3-bI9" firstAttribute="top" secondItem="vjz-7w-w3B" secondAttribute="top" id="PWd-ei-hCt"/>
+                            <constraint firstItem="dDa-CN-pbp" firstAttribute="leading" secondItem="AGW-gp-OOh" secondAttribute="leading" id="U6C-wd-AgY"/>
+                            <constraint firstItem="dDa-CN-pbp" firstAttribute="top" secondItem="0p5-V3-bI9" secondAttribute="bottom" id="Xtf-u5-mda"/>
+                            <constraint firstItem="0p5-V3-bI9" firstAttribute="leading" secondItem="vjz-7w-w3B" secondAttribute="leading" id="odz-jU-low"/>
+                            <constraint firstItem="dDa-CN-pbp" firstAttribute="trailing" secondItem="AGW-gp-OOh" secondAttribute="trailing" id="qjZ-bM-wzc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AGW-gp-OOh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="7f1-y6-IgS"/>
+                    <navigationItem key="navigationItem" title="Title" id="1rl-zh-4ZL"/>
+                    <connections>
+                        <outlet property="eMailLabel" destination="rY9-Kf-WZI" id="je1-Dl-Z6E"/>
+                        <outlet property="profilePic" destination="HTW-Pg-5Lp" id="s3F-WA-A8Z"/>
+                        <outlet property="userNameLabel" destination="Cgp-g3-n1f" id="hkB-JI-2iM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vKz-hI-FGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709.60000000000002" y="-1544.0779610194904"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MIl-qD-lcH">
+            <objects>
+                <tabBarController id="zJc-Un-i3c" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QJx-eX-kit">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gd9-5C-pk0" kind="relationship" relationship="viewControllers" id="RK6-um-lIZ"/>
+                        <segue destination="GVJ-4K-UAT" kind="relationship" relationship="viewControllers" id="JE1-bl-4SP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8vt-ES-OQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="-870"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_email.png" width="24" height="24"/>
+    </resources>
 </document>

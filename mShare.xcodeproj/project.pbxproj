@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		157F0D93440DDA4DD1074B5A /* Pods_mShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16150FC6EDCBD5C8ACBAD1D7 /* Pods_mShare.framework */; };
+		E04151E81FFD4E5B004F7EAE /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */; };
 		E05F577C1FFBDF91001ACB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F577B1FFBDF91001ACB9E /* AppDelegate.swift */; };
 		E05F577E1FFBDF91001ACB9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F577D1FFBDF91001ACB9E /* ViewController.swift */; };
 		E05F57811FFBDF91001ACB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05F577F1FFBDF91001ACB9E /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		16150FC6EDCBD5C8ACBAD1D7 /* Pods_mShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77155708F4A828848855AB14 /* Pods-mShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.debug.xcconfig"; sourceTree = "<group>"; };
 		B95E0E863799897E0287949F /* Pods-mShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.release.xcconfig"; sourceTree = "<group>"; };
+		E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		E05F57781FFBDF91001ACB9E /* mShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05F577B1FFBDF91001ACB9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E05F577D1FFBDF91001ACB9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E04151E61FFD4E33004F7EAE /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */,
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
 		E05F576F1FFBDF91001ACB9E = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		E05F577A1FFBDF91001ACB9E /* mShare */ = {
 			isa = PBXGroup;
 			children = (
+				E04151E61FFD4E33004F7EAE /* DashBoard */,
 				E05F57B01FFBF5F7001ACB9E /* Login */,
 				E05F57A91FFBE7EB001ACB9E /* GoogleService-Info.plist */,
 				E05F577B1FFBDF91001ACB9E /* AppDelegate.swift */,
@@ -370,6 +381,7 @@
 				E05F57B21FFBF60C001ACB9E /* LoginViewController.swift in Sources */,
 				E05F577E1FFBDF91001ACB9E /* ViewController.swift in Sources */,
 				E05F577C1FFBDF91001ACB9E /* AppDelegate.swift in Sources */,
+				E04151E81FFD4E5B004F7EAE /* DashBoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
