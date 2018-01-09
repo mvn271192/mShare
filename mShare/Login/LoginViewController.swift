@@ -12,6 +12,7 @@ import GoogleSignIn
 import FirebaseAuth
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
+import FirebaseDatabase
 
 
 class LoginViewController: UIViewController ,FUIAuthDelegate{
@@ -19,6 +20,8 @@ class LoginViewController: UIViewController ,FUIAuthDelegate{
     
     
     @IBOutlet weak var signInButton: GIDSignInButton!
+    private lazy var userRef: DatabaseReference = Database.database().reference().child(USERS)
+    private  var userRefHandle: DatabaseHandle?
     
   
 // MARK: - View Life Cycles
@@ -34,6 +37,8 @@ class LoginViewController: UIViewController ,FUIAuthDelegate{
        
     }
     
+    // MARK: - Functions
+    
     @objc func signInButtonClick(_ sender :AnyObject)
     {
 
@@ -44,9 +49,7 @@ class LoginViewController: UIViewController ,FUIAuthDelegate{
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-        
-        
-        
+       
     
     }
     
@@ -54,20 +57,9 @@ class LoginViewController: UIViewController ,FUIAuthDelegate{
         Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
                 // User is signed in.
-                let photoURL = user?.photoURL
-                let data = try? Data(contentsOf: photoURL!)
-                if let imgData = data
-                {
-                   self.performSegue(withIdentifier: "tabViewController", sender: user)
-                    let image = UIImage(data: imgData)
-                    let name = user?.displayName
-                    let userId = user?.email
-                }
-                
-                
-                
-                
-                
+                let muser = mUser(authData: user!)
+                self.performSegue(withIdentifier: "tabViewController", sender: muser)
+              
             } else {
                 // No user is signed in.
                 self.login()
@@ -83,6 +75,13 @@ class LoginViewController: UIViewController ,FUIAuthDelegate{
         authUI?.providers = [googleProvider]
         let authViewController = authUI?.authViewController()
         self.present(authViewController!, animated: true, completion: nil)
+    }
+    
+    func insertUser(_ user: User) -> mUser
+    {
+        let userData = mUser(authData: user)
+        self.userRef.child(user.uid).setValue(userData.toAnyObject())
+        return userData
     }
     
     // MARK: - Auth Delegates
@@ -102,12 +101,13 @@ class LoginViewController: UIViewController ,FUIAuthDelegate{
         if error != nil {
             //Problem signing in
             login()
-        }else {
-            self.performSegue(withIdentifier: "tabViewController", sender: user)
+        }
+        else
+        {
+            
+            self.performSegue(withIdentifier: "tabViewController", sender: insertUser(user!))
             //User is in! Here is where we code after signing in
-            let name = user?.displayName
-            let userId = user?.email
-            let photourl = user?.photoURL
+            
             
         }
     }
@@ -128,11 +128,13 @@ class LoginViewController: UIViewController ,FUIAuthDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        if let user = sender as? User
+        if let user = sender as? mUser
         {
-            let vcTab = segue.destination as! UITabBarController
-            let dashVC = vcTab.viewControllers![0] as! DashBoardViewController
-            dashVC.user = user
+            let tabVC = segue.destination as! UITabBarController
+            let navVC = tabVC.viewControllers![0] as! UINavigationController
+            let dashVC = navVC.topViewController as! DashBoardViewController
+
+           dashVC.user = user
         }
         
         

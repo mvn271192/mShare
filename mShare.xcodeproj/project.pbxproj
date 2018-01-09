@@ -18,6 +18,14 @@
 		E05F579C1FFBDF91001ACB9E /* mShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F579B1FFBDF91001ACB9E /* mShareUITests.swift */; };
 		E05F57AA1FFBE7EB001ACB9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E05F57A91FFBE7EB001ACB9E /* GoogleService-Info.plist */; };
 		E05F57B21FFBF60C001ACB9E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F57B11FFBF60C001ACB9E /* LoginViewController.swift */; };
+		E06976181FFE737F00DE9455 /* user-01-256.png in Resources */ = {isa = PBXBuildFile; fileRef = E06976171FFE737F00DE9455 /* user-01-256.png */; };
+		E069761A1FFE996500DE9455 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06976191FFE996500DE9455 /* User.swift */; };
+		E0B68DA01FFFE38E005DE2C9 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B68D9F1FFFE38E005DE2C9 /* GroupTableViewCell.swift */; };
+		E0B68DA31FFFE78F005DE2C9 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B68DA21FFFE78F005DE2C9 /* Group.swift */; };
+		E0B68DA51FFFF8B7005DE2C9 /* grp.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B68DA41FFFF8B7005DE2C9 /* grp.png */; };
+		E0C7C7322000DE2600F72BA0 /* GroupInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7C7312000DE2600F72BA0 /* GroupInfoViewController.swift */; };
+		E0FCE8EF20052BAE00ADF707 /* GroupSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FCE8EE20052BAE00ADF707 /* GroupSettingViewController.swift */; };
+		E0FCE8F120053A2200ADF707 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FCE8F020053A2200ADF707 /* AddUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +65,14 @@
 		E05F579D1FFBDF91001ACB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E05F57A91FFBE7EB001ACB9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E05F57B11FFBF60C001ACB9E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E06976171FFE737F00DE9455 /* user-01-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-01-256.png"; sourceTree = "<group>"; };
+		E06976191FFE996500DE9455 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E0B68D9F1FFFE38E005DE2C9 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		E0B68DA21FFFE78F005DE2C9 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		E0B68DA41FFFF8B7005DE2C9 /* grp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grp.png; sourceTree = "<group>"; };
+		E0C7C7312000DE2600F72BA0 /* GroupInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoViewController.swift; sourceTree = "<group>"; };
+		E0FCE8EE20052BAE00ADF707 /* GroupSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingViewController.swift; sourceTree = "<group>"; };
+		E0FCE8F020053A2200ADF707 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */,
+				E0B68D9F1FFFE38E005DE2C9 /* GroupTableViewCell.swift */,
+				E0C7C7312000DE2600F72BA0 /* GroupInfoViewController.swift */,
+				E0FCE8EE20052BAE00ADF707 /* GroupSettingViewController.swift */,
+				E0FCE8F020053A2200ADF707 /* AddUserViewController.swift */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -135,6 +155,8 @@
 		E05F577A1FFBDF91001ACB9E /* mShare */ = {
 			isa = PBXGroup;
 			children = (
+				E0B68DA11FFFE775005DE2C9 /* Model */,
+				E0B68D9E1FFFE277005DE2C9 /* Resoures */,
 				E04151E61FFD4E33004F7EAE /* DashBoard */,
 				E05F57B01FFBF5F7001ACB9E /* Login */,
 				E05F57A91FFBE7EB001ACB9E /* GoogleService-Info.plist */,
@@ -172,6 +194,24 @@
 				E05F57B11FFBF60C001ACB9E /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E0B68D9E1FFFE277005DE2C9 /* Resoures */ = {
+			isa = PBXGroup;
+			children = (
+				E06976171FFE737F00DE9455 /* user-01-256.png */,
+				E0B68DA41FFFF8B7005DE2C9 /* grp.png */,
+			);
+			path = Resoures;
+			sourceTree = "<group>";
+		};
+		E0B68DA11FFFE775005DE2C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E06976191FFE996500DE9455 /* User.swift */,
+				E0B68DA21FFFE78F005DE2C9 /* Group.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +324,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B68DA51FFFF8B7005DE2C9 /* grp.png in Resources */,
 				E05F57861FFBDF91001ACB9E /* LaunchScreen.storyboard in Resources */,
+				E06976181FFE737F00DE9455 /* user-01-256.png in Resources */,
 				E05F57AA1FFBE7EB001ACB9E /* GoogleService-Info.plist in Resources */,
 				E05F57831FFBDF91001ACB9E /* Assets.xcassets in Resources */,
 				E05F57811FFBDF91001ACB9E /* Main.storyboard in Resources */,
@@ -336,6 +378,9 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -343,6 +388,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,8 +426,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0FCE8EF20052BAE00ADF707 /* GroupSettingViewController.swift in Sources */,
+				E0C7C7322000DE2600F72BA0 /* GroupInfoViewController.swift in Sources */,
+				E069761A1FFE996500DE9455 /* User.swift in Sources */,
 				E05F57B21FFBF60C001ACB9E /* LoginViewController.swift in Sources */,
+				E0B68DA31FFFE78F005DE2C9 /* Group.swift in Sources */,
+				E0FCE8F120053A2200ADF707 /* AddUserViewController.swift in Sources */,
 				E05F577E1FFBDF91001ACB9E /* ViewController.swift in Sources */,
+				E0B68DA01FFFE38E005DE2C9 /* GroupTableViewCell.swift in Sources */,
 				E05F577C1FFBDF91001ACB9E /* AppDelegate.swift in Sources */,
 				E04151E81FFD4E5B004F7EAE /* DashBoardViewController.swift in Sources */,
 			);
