@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		157F0D93440DDA4DD1074B5A /* Pods_mShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16150FC6EDCBD5C8ACBAD1D7 /* Pods_mShare.framework */; };
+		2D96BEFDEBA6FC2AD6BE6185 /* Pods_mShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995345C4BD48337F1B8D5280 /* Pods_mShare.framework */; };
 		E04151E81FFD4E5B004F7EAE /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */; };
 		E05F577C1FFBDF91001ACB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F577B1FFBDF91001ACB9E /* AppDelegate.swift */; };
 		E05F577E1FFBDF91001ACB9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F577D1FFBDF91001ACB9E /* ViewController.swift */; };
@@ -46,9 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16150FC6EDCBD5C8ACBAD1D7 /* Pods_mShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77155708F4A828848855AB14 /* Pods-mShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.debug.xcconfig"; sourceTree = "<group>"; };
-		B95E0E863799897E0287949F /* Pods-mShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.release.xcconfig"; sourceTree = "<group>"; };
+		995345C4BD48337F1B8D5280 /* Pods_mShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D67FC0226532C5CAFDFA6E1 /* Pods-mShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.release.xcconfig"; sourceTree = "<group>"; };
+		D07D3AFD030200289341EA2B /* Pods-mShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.debug.xcconfig"; sourceTree = "<group>"; };
 		E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		E05F57781FFBDF91001ACB9E /* mShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05F577B1FFBDF91001ACB9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				157F0D93440DDA4DD1074B5A /* Pods_mShare.framework in Frameworks */,
+				2D96BEFDEBA6FC2AD6BE6185 /* Pods_mShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,21 +101,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		21C3D463D2FEAC3EEFA3CD5C /* Pods */ = {
+		51BEAB9FA721787DDCB100D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				77155708F4A828848855AB14 /* Pods-mShare.debug.xcconfig */,
-				B95E0E863799897E0287949F /* Pods-mShare.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		7F476AAAFFE17F13EDA384C5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				16150FC6EDCBD5C8ACBAD1D7 /* Pods_mShare.framework */,
+				995345C4BD48337F1B8D5280 /* Pods_mShare.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6F65D3AC83F528AFC501992 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D07D3AFD030200289341EA2B /* Pods-mShare.debug.xcconfig */,
+				9D67FC0226532C5CAFDFA6E1 /* Pods-mShare.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		E04151E61FFD4E33004F7EAE /* DashBoard */ = {
@@ -137,8 +137,8 @@
 				E05F578F1FFBDF91001ACB9E /* mShareTests */,
 				E05F579A1FFBDF91001ACB9E /* mShareUITests */,
 				E05F57791FFBDF91001ACB9E /* Products */,
-				21C3D463D2FEAC3EEFA3CD5C /* Pods */,
-				7F476AAAFFE17F13EDA384C5 /* Frameworks */,
+				D6F65D3AC83F528AFC501992 /* Pods */,
+				51BEAB9FA721787DDCB100D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,12 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E05F57A01FFBDF91001ACB9E /* Build configuration list for PBXNativeTarget "mShare" */;
 			buildPhases = (
-				29101FC349ADD56B8CF79333 /* [CP] Check Pods Manifest.lock */,
+				DFD2010365A4AA4F1271E5B2 /* [CP] Check Pods Manifest.lock */,
 				E05F57741FFBDF91001ACB9E /* Sources */,
 				E05F57751FFBDF91001ACB9E /* Frameworks */,
 				E05F57761FFBDF91001ACB9E /* Resources */,
-				3EF377FCCFD7E1E37DA586A7 /* [CP] Embed Pods Frameworks */,
-				7F67DC4A7F6F1A17014AEDC2 /* [CP] Copy Pods Resources */,
+				5FD5EBE1D14FC830376ACD6E /* [CP] Embed Pods Frameworks */,
+				B9BDE90E88FB495E175BE674 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,25 +350,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		29101FC349ADD56B8CF79333 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mShare-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3EF377FCCFD7E1E37DA586A7 /* [CP] Embed Pods Frameworks */ = {
+		5FD5EBE1D14FC830376ACD6E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,16 +380,16 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mShare/Pods-mShare-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F67DC4A7F6F1A17014AEDC2 /* [CP] Copy Pods Resources */ = {
+		B9BDE90E88FB495E175BE674 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-mShare/Pods-mShare-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -417,6 +399,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mShare/Pods-mShare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFD2010365A4AA4F1271E5B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -599,11 +599,11 @@
 		};
 		E05F57A11FFBDF91001ACB9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77155708F4A828848855AB14 /* Pods-mShare.debug.xcconfig */;
+			baseConfigurationReference = D07D3AFD030200289341EA2B /* Pods-mShare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZZ47G9F999;
+				DEVELOPMENT_TEAM = 7JY28828U8;
 				INFOPLIST_FILE = mShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MVN271192.mShare;
@@ -615,11 +615,11 @@
 		};
 		E05F57A21FFBDF91001ACB9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B95E0E863799897E0287949F /* Pods-mShare.release.xcconfig */;
+			baseConfigurationReference = 9D67FC0226532C5CAFDFA6E1 /* Pods-mShare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZZ47G9F999;
+				DEVELOPMENT_TEAM = 7JY28828U8;
 				INFOPLIST_FILE = mShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MVN271192.mShare;
