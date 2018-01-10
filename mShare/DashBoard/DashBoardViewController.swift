@@ -13,8 +13,7 @@ import FirebaseDatabase
 import NVActivityIndicatorView
 import Toast_Swift
 
-let GROUP = "Groups"
-let USERS = "Users"
+
 
 
 
@@ -28,6 +27,8 @@ class DashBoardViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet weak var profilePic: UIImageView!
     
     private lazy var databaseRef: DatabaseReference = Database.database().reference()
+    
+    let common = Common()
     
     var groupList:[Group] = []
     
@@ -44,6 +45,7 @@ class DashBoardViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.observeGroups()
+        self.setProfilePic()
         
         
         
@@ -53,7 +55,7 @@ class DashBoardViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        setProfilePic()
+        
     }
     
     // MARK: - Firebase Operatons
@@ -92,16 +94,10 @@ class DashBoardViewController: UIViewController,UITableViewDelegate,UITableViewD
     {
         // Use the observe method to listen for new
         // channels being written to the Firebase DB
-        
-        let nvactivity = NVActivityIndicatorView(frame: CGRect(x: 0
-            , y: 0, width: 50, height: 50), type: NVActivityIndicatorType.ballScaleMultiple, color: UIColor.green, padding: 0)
-        self.view.addSubview(nvactivity)
-        self.view.bringSubview(toFront: nvactivity)
-        nvactivity.center = self.view.center
+     
+        let nvactivity = common.setActitvityIndicator(inView: self.view)
         nvactivity.startAnimating()
-        
-        //queryStarting(atValue: true, childKey: user.uid)
-        
+      
         let grpRef = databaseRef.child(GROUP)
         let userRef = databaseRef.child(USERS)
         let grpInUserRef = userRef.child(user.uid).child(GROUP)

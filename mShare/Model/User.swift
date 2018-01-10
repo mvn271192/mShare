@@ -30,7 +30,7 @@ class mUser
     {
         self.name = name
         self.email = email
-        self.photoURL = URL(fileURLWithPath: photoURL)
+        self.photoURL = URL(string: photoURL)
         self.uid = uid
     }
     

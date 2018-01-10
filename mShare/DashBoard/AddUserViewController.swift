@@ -9,16 +9,18 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import Toast_Swift
 
 class AddUserViewController: UIViewController {
     
-    let NameTag = 1, EmailTag = 2, PhotoTag = 3
+    
     
     
     @IBOutlet weak var userSearchView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     private lazy var databaseRef: DatabaseReference = Database.database().reference()
     
+    let common = Common()
     // MARK: - View LifeCycle
     
     override func viewDidLoad() {
@@ -34,18 +36,26 @@ class AddUserViewController: UIViewController {
     
     // MARK: - Action
     
-    
     @IBAction func searchButtonClick(_ sender: Any)
     {
+        emailTextField.resignFirstResponder()
+        
+        let nvactivity = common.setActitvityIndicator(inView: self.view)
+        nvactivity.startAnimating()
+        
         if  let emailText = emailTextField.text , emailText.count > 0
         {
             
             databaseRef.child(USERS).queryOrdered(byChild: "email").queryEqual(toValue: emailText).observe(.value, with: { (snapshot) in
                 
+                if !(snapshot.childrenCount > 0)
+                {
+                    nvactivity.stopAnimating()
+                    self.view.makeToast("User not found")
+                }
+                
                 for item in snapshot.children
                 {
-                    
-                   
                     let snap = item as! DataSnapshot
                     let dic = snap.value as! Dictionary<String,AnyObject>
                     if let name = dic["name"] as! String!
@@ -55,6 +65,7 @@ class AddUserViewController: UIViewController {
                         let photoURL = dic["photoURL"] as? String ?? ""
                         let user = mUser(name: name, email: email!, photoURL: photoURL, uid: snap.key)
                         self.setUserView(forUser: user)
+                        nvactivity.stopAnimating()
                     }
                     
                 }
@@ -84,12 +95,16 @@ class AddUserViewController: UIViewController {
         
         userSearchView.isHidden = false
         
+        let nvIndicator = common.setActitvityIndicator(inView: photoImageView)
+        nvIndicator.startAnimating()
+        
         let photoURL = user.photoURL
         if let url = photoURL {
-            let data = try? Data(contentsOf: url)
+            DispatchQueue.global(qos: .background).async {
+                let data = try? Data(contentsOf: url)
             
             DispatchQueue.main.async {
-               // activityIndicator.stopAnimating()
+                nvIndicator.stopAnimating()
                 if let imgData = data
                 {
                     let image = UIImage(data: imgData)
@@ -97,6 +112,7 @@ class AddUserViewController: UIViewController {
                     photoImageView.layer.cornerRadius = photoImageView.frame.size.height/2
                     photoImageView.layer.masksToBounds = true
                 }
+            }
             }
         }
         
