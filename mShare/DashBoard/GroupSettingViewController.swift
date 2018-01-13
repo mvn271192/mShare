@@ -40,6 +40,7 @@ class GroupSettingViewController: UIViewController,UITableViewDelegate,UITableVi
     
     @IBAction func addUserButtonClick(_ sender: Any)
     {
+        self.performSegue(withIdentifier: "addUser", sender: selectedGroup)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,14 +58,23 @@ class GroupSettingViewController: UIViewController,UITableViewDelegate,UITableVi
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if (segue.identifier == "addUser")
+        {
+            let grp = sender as! Group
+            let addUserVC = segue.destination as! AddUserViewController
+            addUserVC.selectedGroup = grp
+            
+            
+        }
     }
-    */
+ 
 
 }

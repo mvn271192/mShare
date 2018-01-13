@@ -20,6 +20,9 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     private lazy var databaseRef: DatabaseReference = Database.database().reference()
     
+    var selectedGroup:Group!
+    var newUser:mUser!
+    
     let common = Common()
     // MARK: - View LifeCycle
     
@@ -64,6 +67,7 @@ class AddUserViewController: UIViewController {
                         let email = dic["email"] as! String!
                         let photoURL = dic["photoURL"] as? String ?? ""
                         let user = mUser(name: name, email: email!, photoURL: photoURL, uid: snap.key)
+                        self.newUser = user
                         self.setUserView(forUser: user)
                         nvactivity.stopAnimating()
                     }
@@ -78,7 +82,46 @@ class AddUserViewController: UIViewController {
     
     @IBAction func addUserButtonClick(_ sender: Any)
     {
-        self.navigationController?.popViewController(animated: true)
+        if (selectedGroup.members?.contains(newUser.uid))!
+        {
+            self.view.makeToast("User already added")
+            return
+        }
+        
+        let grpRef = databaseRef.child(GROUP).child(self.selectedGroup.gId).child("members")
+        let userRef = databaseRef.child(USERS).child(newUser.uid).child(GROUP)
+        
+        grpRef.child(newUser.uid).setValue(true) { (error, databaseRef) in
+            
+            if let err = error
+            {
+                self.view.makeToast("Insertion fail")
+                print(err)
+                return
+            }
+            else
+            {
+                print(databaseRef.key)
+                userRef.child(self.selectedGroup.gId).setValue(true, withCompletionBlock: { (error1, userDatabaseRref) in
+                    
+                    if let err = error1
+                    {
+                        self.view.makeToast("Insertion fail")
+                        print(err)
+                        return
+                    }
+                    else
+                    {
+                        print(userDatabaseRref.key)
+                        self.view.makeToast("User added")
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                })
+                
+            }
+            
+        }
+       
     }
     
     
@@ -86,6 +129,7 @@ class AddUserViewController: UIViewController {
     
     func setUserView(forUser user:mUser)
     {
+        
         let nameLabel = userSearchView.viewWithTag(NameTag) as! UILabel
         let emailLabel = userSearchView.viewWithTag(EmailTag) as! UILabel
         let photoImageView = userSearchView.viewWithTag(PhotoTag) as! UIImageView
@@ -93,8 +137,12 @@ class AddUserViewController: UIViewController {
         nameLabel.text = user.name
         emailLabel.text = user.email
         
-        userSearchView.isHidden = false
+
         
+        self.userSearchView.isHidden = false
+        common.dropShadow(color: UIColor.black, view: self.userSearchView)
+        
+     
         let nvIndicator = common.setActitvityIndicator(inView: photoImageView)
         nvIndicator.startAnimating()
         

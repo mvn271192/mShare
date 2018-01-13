@@ -28,4 +28,18 @@ struct Common {
         return nvactivity
     }
     
+    func dropShadow(color: UIColor, view: UIView, radius: CGFloat = 1, scale: Bool = true) {
+        
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = color.cgColor
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOffset = CGSize(width: -1, height: 1)
+        view.layer.shadowRadius = radius
+        
+        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
+        view.layer.shouldRasterize = true
+        view.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+
+    
 }
