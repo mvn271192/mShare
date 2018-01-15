@@ -10,6 +10,7 @@
 		2D96BEFDEBA6FC2AD6BE6185 /* Pods_mShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995345C4BD48337F1B8D5280 /* Pods_mShare.framework */; };
 		907FF1DF2005F42600C88CE0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907FF1DE2005F42600C88CE0 /* Common.swift */; };
 		E04151E81FFD4E5B004F7EAE /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */; };
+		E04BF112200CFE970082CFAA /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04BF111200CFE970082CFAA /* UserListTableViewCell.swift */; };
 		E05F577C1FFBDF91001ACB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F577B1FFBDF91001ACB9E /* AppDelegate.swift */; };
 		E05F577E1FFBDF91001ACB9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F577D1FFBDF91001ACB9E /* ViewController.swift */; };
 		E05F57811FFBDF91001ACB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05F577F1FFBDF91001ACB9E /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		9D67FC0226532C5CAFDFA6E1 /* Pods-mShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.release.xcconfig"; sourceTree = "<group>"; };
 		D07D3AFD030200289341EA2B /* Pods-mShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.debug.xcconfig"; sourceTree = "<group>"; };
 		E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		E04BF111200CFE970082CFAA /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
 		E05F57781FFBDF91001ACB9E /* mShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05F577B1FFBDF91001ACB9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E05F577D1FFBDF91001ACB9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,10 +136,19 @@
 				E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */,
 				E0B68D9F1FFFE38E005DE2C9 /* GroupTableViewCell.swift */,
 				E0C7C7312000DE2600F72BA0 /* GroupInfoViewController.swift */,
-				E0FCE8EE20052BAE00ADF707 /* GroupSettingViewController.swift */,
+				E04BF114200D014B0082CFAA /* Edit Group */,
 				E0FCE8F020053A2200ADF707 /* AddUserViewController.swift */,
 			);
 			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		E04BF114200D014B0082CFAA /* Edit Group */ = {
+			isa = PBXGroup;
+			children = (
+				E0FCE8EE20052BAE00ADF707 /* GroupSettingViewController.swift */,
+				E04BF111200CFE970082CFAA /* UserListTableViewCell.swift */,
+			);
+			path = "Edit Group";
 			sourceTree = "<group>";
 		};
 		E05F576F1FFBDF91001ACB9E = {
@@ -441,6 +452,7 @@
 				E0C7C7322000DE2600F72BA0 /* GroupInfoViewController.swift in Sources */,
 				E069761A1FFE996500DE9455 /* User.swift in Sources */,
 				E05F57B21FFBF60C001ACB9E /* LoginViewController.swift in Sources */,
+				E04BF112200CFE970082CFAA /* UserListTableViewCell.swift in Sources */,
 				907FF1DF2005F42600C88CE0 /* Common.swift in Sources */,
 				E0B68DA31FFFE78F005DE2C9 /* Group.swift in Sources */,
 				E0FCE8F120053A2200ADF707 /* AddUserViewController.swift in Sources */,

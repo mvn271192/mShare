@@ -11,11 +11,16 @@ import Firebase
 import FirebaseDatabase
 import Toast_Swift
 
+protocol AddUserProtocol: NSObjectProtocol {
+    
+    func userAddedtoGroup(user: mUser)
+}
+
 class AddUserViewController: UIViewController {
     
     
     
-    
+    weak var delegate:AddUserProtocol?
     @IBOutlet weak var userSearchView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     private lazy var databaseRef: DatabaseReference = Database.database().reference()
@@ -82,11 +87,15 @@ class AddUserViewController: UIViewController {
     
     @IBAction func addUserButtonClick(_ sender: Any)
     {
+        self.emailTextField.text = ""
         if (selectedGroup.members?.contains(newUser.uid))!
         {
             self.view.makeToast("User already added")
+            
             return
         }
+        let nvactivity = common.setActitvityIndicator(inView: self.view)
+        nvactivity.startAnimating()
         
         let grpRef = databaseRef.child(GROUP).child(self.selectedGroup.gId).child("members")
         let userRef = databaseRef.child(USERS).child(newUser.uid).child(GROUP)
@@ -104,6 +113,9 @@ class AddUserViewController: UIViewController {
                 print(databaseRef.key)
                 userRef.child(self.selectedGroup.gId).setValue(true, withCompletionBlock: { (error1, userDatabaseRref) in
                     
+                    DispatchQueue.main.async {
+                        nvactivity.stopAnimating()
+                    }
                     if let err = error1
                     {
                         self.view.makeToast("Insertion fail")
@@ -114,7 +126,12 @@ class AddUserViewController: UIViewController {
                     {
                         print(userDatabaseRref.key)
                         self.view.makeToast("User added")
-                        self.navigationController?.popViewController(animated: true)
+                        if ((self.delegate) != nil)
+                        {
+                            self.delegate?.userAddedtoGroup(user: self.newUser)
+                        }
+                        self.userSearchView.isHidden = true
+                        //self.navigationController?.popViewController(animated: true)
                     }
                 })
                 
