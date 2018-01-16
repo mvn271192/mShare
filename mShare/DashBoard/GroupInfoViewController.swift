@@ -29,6 +29,7 @@ class GroupInfoViewController: UIViewController,UITableViewDelegate,UITableViewD
     // MARK: - Actions
     @IBAction func addTaskButtonClick(_ sender: Any)
     {
+        self.performSegue(withIdentifier: "addExpence", sender: nil)
     }
     
     @IBAction func balanceButtonClick(_ sender: Any)
@@ -73,6 +74,11 @@ class GroupInfoViewController: UIViewController,UITableViewDelegate,UITableViewD
             let navVC = segue.destination as! UINavigationController
             let grpsettingVC = navVC.topViewController as! GroupSettingViewController
             grpsettingVC.selectedGroup = selectedGrp
+            
+        }
+        
+        else if (segue.identifier == "addExpence")
+        {
             
         }
     }

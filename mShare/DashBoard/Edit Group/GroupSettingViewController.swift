@@ -9,13 +9,14 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import SkyFloatingLabelTextField
 
 class GroupSettingViewController: UIViewController,UITableViewDelegate,UITableViewDataSource ,AddUserProtocol{
  
     
 
     @IBOutlet weak var memberListTableView: UITableView!
-    @IBOutlet weak var groupNameTextField: UITextField!
+    @IBOutlet weak var groupNameTextField: SkyFloatingLabelTextField!
     var selectedGroup:Group!
     
     var membersList:[mUser] = []
@@ -29,6 +30,10 @@ class GroupSettingViewController: UIViewController,UITableViewDelegate,UITableVi
         
         groupNameTextField.text = selectedGroup.name
         getMembersList(from: selectedGroup)
+        
+        groupNameTextField.titleLabel.font = UIFont(name: Font, size: CGFloat(FontSize))
+        groupNameTextField.placeholderFont = UIFont(name: Font, size: CGFloat(FontSize))
+        
 
         // Do any additional setup after loading the view.
     }
@@ -57,6 +62,21 @@ class GroupSettingViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     
     // MARK: - TableView DataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Members"
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: Font, size: CGFloat(FontSize+1))!
+        
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60

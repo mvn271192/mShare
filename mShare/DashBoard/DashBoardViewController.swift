@@ -293,6 +293,14 @@ class DashBoardViewController: UIViewController,UITableViewDelegate,UITableViewD
         return "Groups"
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: Font, size: CGFloat(FontSize+1))!
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return groupList.count

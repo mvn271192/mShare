@@ -15,6 +15,9 @@ let GROUP = "Groups"
 let USERS = "Users"
 let NameTag = 1, EmailTag = 2, PhotoTag = 3
 
+let Font = "Kefa"
+let FontSize = 16
+
 struct Common {
     
     func setActitvityIndicator(inView view:UIView)->NVActivityIndicatorView

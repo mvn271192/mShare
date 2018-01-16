@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import Toast_Swift
+import SkyFloatingLabelTextField
 
 protocol AddUserProtocol: NSObjectProtocol {
     
@@ -22,7 +23,7 @@ class AddUserViewController: UIViewController {
     
     weak var delegate:AddUserProtocol?
     @IBOutlet weak var userSearchView: UIView!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     private lazy var databaseRef: DatabaseReference = Database.database().reference()
     
     var selectedGroup:Group!
@@ -35,6 +36,9 @@ class AddUserViewController: UIViewController {
         super.viewDidLoad()
         
         self.userSearchView.isHidden = true
+        
+        emailTextField.titleLabel.font = UIFont(name: Font, size: CGFloat(FontSize))
+        emailTextField.placeholderFont = UIFont(name: Font, size: CGFloat(FontSize))
         // Do any additional setup after loading the view.
     }
     
