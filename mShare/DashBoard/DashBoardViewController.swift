@@ -296,7 +296,7 @@ class DashBoardViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: Font, size: CGFloat(FontSize+1))!
+        header.textLabel?.font = UIFont(name: Font, size: CGFloat(FontSize+1))
         
     }
     
