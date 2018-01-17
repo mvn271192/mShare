@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class AddExpenceViewController: UIViewController {
     
@@ -14,13 +15,29 @@ class AddExpenceViewController: UIViewController {
     let GroupButton = 2
     let Camera = 3
     let Voice = 4
+    
+   
 
+    @IBOutlet weak var splitButton: UIButton!
+    @IBOutlet weak var paidButton: UIButton!
+    @IBOutlet weak var currencyButton: UIButton!
+    @IBOutlet weak var expenceImageView: UIImageView!
+    @IBOutlet weak var descriptionTextField: SkyFloatingLabelTextField!
+    
+    @IBOutlet weak var noteTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var amountTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var datePickerView: UIView!
     @IBOutlet weak var groupButton: UIButton!
     @IBOutlet weak var calenderButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
+    // MARK: - View LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker.isHidden = true
+        datePickerView.isHidden = true
+        setFont()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -29,6 +46,9 @@ class AddExpenceViewController: UIViewController {
 
 
     
+    @IBAction func onTapView(_ sender: Any) {
+        datePickerView.isHidden = true
+    }
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         let selectedDate = sender.date
         let dateFormatter = DateFormatter()
@@ -58,7 +78,9 @@ class AddExpenceViewController: UIViewController {
         
         switch tag {
         case Calender:
-            datePicker.isHidden = false
+                self.datePickerView.isHidden = false
+                self.view.bringSubview(toFront: self.datePickerView)
+            
             break;
         default: break
             
@@ -68,6 +90,20 @@ class AddExpenceViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Fucntions
+    
+    func setFont()
+    {
+        noteTextField.titleLabel.font = FontForTextField
+        noteTextField.placeholderFont = FontForTextField
+        
+        amountTextField.titleLabel.font = FontForTextField
+        amountTextField.placeholderFont = FontForTextField
+        
+        descriptionTextField.titleLabel.font = FontForTextField
+        descriptionTextField.placeholderFont = FontForTextField
     }
     
     /*

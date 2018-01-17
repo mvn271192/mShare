@@ -17,6 +17,7 @@ let NameTag = 1, EmailTag = 2, PhotoTag = 3
 
 let Font = "Kefa"
 let FontSize = 16
+let FontForTextField = UIFont (name: Font, size: CGFloat(FontSize))
 
 struct Common {
     
