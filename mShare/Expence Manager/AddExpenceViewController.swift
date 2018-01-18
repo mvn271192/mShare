@@ -8,8 +8,10 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import DynamicBlurView
 
-class AddExpenceViewController: UIViewController {
+
+class AddExpenceViewController: UIViewController, UIGestureRecognizerDelegate {
     
     let Calender  = 1
     let GroupButton = 2
@@ -32,7 +34,8 @@ class AddExpenceViewController: UIViewController {
     @IBOutlet weak var calenderButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    var blurView:UIView?
+    var blurView:DynamicBlurView?
+    var selectedGroup:Group!
     
     // MARK: - View LifeCycle
     
@@ -51,19 +54,41 @@ class AddExpenceViewController: UIViewController {
     }
     
     @IBAction func paidButtonClick(_ sender: Any) {
+        if (blurView == nil)
+        {
+            blurView = common.getBlurEffectView(view: self.view)
+        }
+        let memberListView = PaidView(group: selectedGroup , view: self.view)
+        memberListView.didSelectedItem = { (selectedItem ) in
+            
+            self.paidButton.setTitle(selectedItem.name, for: .normal)
+            memberListView.removeFromSuperview()
+            self.blurView?.removeFromSuperview()
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.blurView!.blurRadius = 30
+        }
+        self.view.addSubview(blurView!)
+        self.view.addSubview(memberListView)
     }
     
     @IBAction func currencyButtonClick(_ sender: Any) {
+        
         if (blurView == nil)
         {
             blurView = common.getBlurEffectView(view: self.view)
         }
         let listView = CurrencySelector(view: self.view)
         listView.didSelectedItem = { (selectedItem ) in
-            let currency = selectedItem 
-            print(currency)
+            
+            self.currencyButton.setTitle(selectedItem.symbol, for: .normal)
+            self.currencyButton.tag = selectedItem.id
+            listView.removeFromSuperview()
+            self.blurView?.removeFromSuperview()
         }
-        
+        UIView.animate(withDuration: 0.5) {
+            self.blurView!.blurRadius = 30
+        }
         self.view.addSubview(blurView!)
         self.view.addSubview(listView)
         
@@ -132,6 +157,7 @@ class AddExpenceViewController: UIViewController {
         descriptionTextField.placeholderFont = FontForTextField
     }
     
+  
     /*
     // MARK: - Navigation
 

@@ -12,6 +12,9 @@
 		90883E70200F508100EFE8F7 /* AddExpenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90883E6F200F508100EFE8F7 /* AddExpenceViewController.swift */; };
 		9088AA1820105C3100DC9712 /* CurrencySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088AA1720105C3100DC9712 /* CurrencySelector.swift */; };
 		9088AA1A20109EEE00DC9712 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088AA1920109EEE00DC9712 /* Currency.swift */; };
+		E00FEF7F20110855004474C9 /* PaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FEF7E20110855004474C9 /* PaidView.swift */; };
+		E00FEF82201128DB004474C9 /* PaidUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FEF80201128DB004474C9 /* PaidUserTableViewCell.swift */; };
+		E00FEF83201128DB004474C9 /* PaidUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00FEF81201128DB004474C9 /* PaidUserTableViewCell.xib */; };
 		E04151E81FFD4E5B004F7EAE /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */; };
 		E04BF112200CFE970082CFAA /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04BF111200CFE970082CFAA /* UserListTableViewCell.swift */; };
 		E05F577C1FFBDF91001ACB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F577B1FFBDF91001ACB9E /* AppDelegate.swift */; };
@@ -58,6 +61,9 @@
 		995345C4BD48337F1B8D5280 /* Pods_mShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D67FC0226532C5CAFDFA6E1 /* Pods-mShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.release.xcconfig"; sourceTree = "<group>"; };
 		D07D3AFD030200289341EA2B /* Pods-mShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.debug.xcconfig"; sourceTree = "<group>"; };
+		E00FEF7E20110855004474C9 /* PaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidView.swift; sourceTree = "<group>"; };
+		E00FEF80201128DB004474C9 /* PaidUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidUserTableViewCell.swift; sourceTree = "<group>"; };
+		E00FEF81201128DB004474C9 /* PaidUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaidUserTableViewCell.xib; sourceTree = "<group>"; };
 		E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		E04BF111200CFE970082CFAA /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
 		E05F57781FFBDF91001ACB9E /* mShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +138,9 @@
 			children = (
 				90883E6F200F508100EFE8F7 /* AddExpenceViewController.swift */,
 				9088AA1720105C3100DC9712 /* CurrencySelector.swift */,
+				E00FEF7E20110855004474C9 /* PaidView.swift */,
+				E00FEF80201128DB004474C9 /* PaidUserTableViewCell.swift */,
+				E00FEF81201128DB004474C9 /* PaidUserTableViewCell.xib */,
 			);
 			path = "Expence Manager";
 			sourceTree = "<group>";
@@ -366,6 +375,7 @@
 				E0B68DA51FFFF8B7005DE2C9 /* grp.png in Resources */,
 				E05F57861FFBDF91001ACB9E /* LaunchScreen.storyboard in Resources */,
 				E06976181FFE737F00DE9455 /* user-01-256.png in Resources */,
+				E00FEF83201128DB004474C9 /* PaidUserTableViewCell.xib in Resources */,
 				E05F57AA1FFBE7EB001ACB9E /* GoogleService-Info.plist in Resources */,
 				E05F57831FFBDF91001ACB9E /* Assets.xcassets in Resources */,
 				E05F57811FFBDF91001ACB9E /* Main.storyboard in Resources */,
@@ -396,6 +406,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-mShare/Pods-mShare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -408,6 +419,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -471,7 +483,9 @@
 			files = (
 				E0FCE8EF20052BAE00ADF707 /* GroupSettingViewController.swift in Sources */,
 				E0C7C7322000DE2600F72BA0 /* GroupInfoViewController.swift in Sources */,
+				E00FEF7F20110855004474C9 /* PaidView.swift in Sources */,
 				E069761A1FFE996500DE9455 /* User.swift in Sources */,
+				E00FEF82201128DB004474C9 /* PaidUserTableViewCell.swift in Sources */,
 				9088AA1820105C3100DC9712 /* CurrencySelector.swift in Sources */,
 				E05F57B21FFBF60C001ACB9E /* LoginViewController.swift in Sources */,
 				E04BF112200CFE970082CFAA /* UserListTableViewCell.swift in Sources */,

@@ -1,4 +1,5 @@
 PODS:
+  - DynamicBlurView (2.0.1)
   - Firebase/Auth (4.8.0):
     - Firebase/Core
     - FirebaseAuth (= 4.4.1)
@@ -68,6 +69,7 @@ PODS:
   - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
+  - DynamicBlurView
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -79,6 +81,7 @@ DEPENDENCIES:
   - Toast-Swift (~> 3.0.1)
 
 SPEC CHECKSUMS:
+  DynamicBlurView: 5e6babd80cc0ddfd3ddfc4f5dacf2fe4181e7c52
   Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
   FirebaseAuth: dc0dd403beca5b2b016aac89c2d0b8dad1c81926
@@ -97,6 +100,6 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: 728b7e815e136f788f4621bc2dcae12e2ed04347
+PODFILE CHECKSUM: 1037f1620f2374605705a9c87d27af5239f129a3
 
 COCOAPODS: 1.3.1

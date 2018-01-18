@@ -13,15 +13,12 @@ class CurrencySelector: UIView, UITableViewDelegate, UITableViewDataSource {
     var currencyTypeList:[Currency] = []
     var listTableView:UITableView = UITableView()
     var didSelectedItem: ((Currency)->Void)?
+    let common = Common()
+    let rowHeight  = 55
+    let pading = 30
     
     init(view: UIView)
     {
-        
-        super.init(frame: CGRect(x: 10, y: 150, width: view.frame.size.width - 20 , height: view.frame.size.height - 150))
-        self.listTableView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.width)
-        self .addSubview(listTableView)
-        listTableView.register(UITableViewCell.self, forCellReuseIdentifier: "listCell")
-        
         let c1 = Currency(name: "INR", country: "Indian Rupee(₹)", id: 1, symbol: "₹")
         let c2 = Currency(name: "USD", country: "US Dollar($)", id: 2, symbol: "$")
         let c3 = Currency(name: "AED", country: "UAE Diraham(₹)", id: 3, symbol: "DH")
@@ -36,10 +33,20 @@ class CurrencySelector: UIView, UITableViewDelegate, UITableViewDataSource {
         currencyTypeList.append(c5)
         currencyTypeList.append(c6)
         
-        listTableView.dataSource = self
-        listTableView.delegate = self
+        super.init(frame: CGRect(x: 10, y: 150, width: Int(view.frame.size.width - 20) , height: currencyTypeList.count * rowHeight + pading ))
+        self.listTableView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+        self .addSubview(listTableView)
+        listTableView.register(UITableViewCell.self, forCellReuseIdentifier: "listCell")
         
-        listTableView.reloadData()
+        common.dropShadow(color: .black, view: self)
+        
+        
+      
+        
+        self.listTableView.dataSource = self
+        self.listTableView.delegate = self
+        
+        self.listTableView.reloadData()
         
         
     }
@@ -56,7 +63,7 @@ class CurrencySelector: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 55
+        return CGFloat(rowHeight)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,15 +77,16 @@ class CurrencySelector: UIView, UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = currencyTypeList[indexPath.row].getCurrencyName()
         cell.textLabel?.font = FontForTextField
-        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        //cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
         return cell
         
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         let selectedObj = currencyTypeList[indexPath.row]
-        
+
         if let handler = didSelectedItem {
             handler(selectedObj)
         }
@@ -95,5 +103,6 @@ class CurrencySelector: UIView, UITableViewDelegate, UITableViewDataSource {
         // Drawing code
     }
     */
+
 
 }
