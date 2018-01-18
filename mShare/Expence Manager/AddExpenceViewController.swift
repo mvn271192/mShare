@@ -16,6 +16,7 @@ class AddExpenceViewController: UIViewController {
     let Camera = 3
     let Voice = 4
     
+    let common = Common()
    
 
     @IBOutlet weak var splitButton: UIButton!
@@ -31,6 +32,8 @@ class AddExpenceViewController: UIViewController {
     @IBOutlet weak var calenderButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    var blurView:UIView?
+    
     // MARK: - View LifeCycle
     
     override func viewDidLoad() {
@@ -44,10 +47,31 @@ class AddExpenceViewController: UIViewController {
     
     // MARK: - Actions
 
-
+    @IBAction func splitButtonClick(_ sender: Any) {
+    }
+    
+    @IBAction func paidButtonClick(_ sender: Any) {
+    }
+    
+    @IBAction func currencyButtonClick(_ sender: Any) {
+        if (blurView == nil)
+        {
+            blurView = common.getBlurEffectView(view: self.view)
+        }
+        let listView = CurrencySelector(view: self.view)
+        listView.didSelectedItem = { (selectedItem ) in
+            let currency = selectedItem 
+            print(currency)
+        }
+        
+        self.view.addSubview(blurView!)
+        self.view.addSubview(listView)
+        
+    }
     
     @IBAction func onTapView(_ sender: Any) {
         datePickerView.isHidden = true
+        self.view.endEditing(true)
     }
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         let selectedDate = sender.date
@@ -78,10 +102,12 @@ class AddExpenceViewController: UIViewController {
         
         switch tag {
         case Calender:
-                self.datePickerView.isHidden = false
-                self.view.bringSubview(toFront: self.datePickerView)
+            self.view.endEditing(true)
+            self.datePickerView.isHidden = false
+            self.view.bringSubview(toFront: self.datePickerView)
             
             break;
+        
         default: break
             
         }

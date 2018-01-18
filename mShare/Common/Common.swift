@@ -44,6 +44,26 @@ struct Common {
         view.layer.shouldRasterize = true
         view.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
+    
+    func getBlurEffectView(view: UIView)->UIView
+    {
+        //only apply the blur if the user hasn't disabled transparency effects
+        if !UIAccessibilityIsReduceTransparencyEnabled() {
+            view.backgroundColor = .clear
+            
+            let blurEffect = UIBlurEffect(style: .dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            //always fill the view
+            blurEffectView.frame = view.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            return blurEffectView
+           // view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        } else {
+            view.backgroundColor = .black
+        }
+        return view
+    }
 
     
 }

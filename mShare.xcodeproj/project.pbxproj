@@ -10,6 +10,8 @@
 		2D96BEFDEBA6FC2AD6BE6185 /* Pods_mShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995345C4BD48337F1B8D5280 /* Pods_mShare.framework */; };
 		907FF1DF2005F42600C88CE0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907FF1DE2005F42600C88CE0 /* Common.swift */; };
 		90883E70200F508100EFE8F7 /* AddExpenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90883E6F200F508100EFE8F7 /* AddExpenceViewController.swift */; };
+		9088AA1820105C3100DC9712 /* CurrencySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088AA1720105C3100DC9712 /* CurrencySelector.swift */; };
+		9088AA1A20109EEE00DC9712 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088AA1920109EEE00DC9712 /* Currency.swift */; };
 		E04151E81FFD4E5B004F7EAE /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04151E71FFD4E5B004F7EAE /* DashBoardViewController.swift */; };
 		E04BF112200CFE970082CFAA /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04BF111200CFE970082CFAA /* UserListTableViewCell.swift */; };
 		E05F577C1FFBDF91001ACB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F577B1FFBDF91001ACB9E /* AppDelegate.swift */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		907FF1DE2005F42600C88CE0 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		90883E6F200F508100EFE8F7 /* AddExpenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenceViewController.swift; sourceTree = "<group>"; };
+		9088AA1720105C3100DC9712 /* CurrencySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelector.swift; sourceTree = "<group>"; };
+		9088AA1920109EEE00DC9712 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		995345C4BD48337F1B8D5280 /* Pods_mShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D67FC0226532C5CAFDFA6E1 /* Pods-mShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.release.xcconfig"; sourceTree = "<group>"; };
 		D07D3AFD030200289341EA2B /* Pods-mShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mShare/Pods-mShare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				90883E6F200F508100EFE8F7 /* AddExpenceViewController.swift */,
+				9088AA1720105C3100DC9712 /* CurrencySelector.swift */,
 			);
 			path = "Expence Manager";
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			children = (
 				E06976191FFE996500DE9455 /* User.swift */,
 				E0B68DA21FFFE78F005DE2C9 /* Group.swift */,
+				9088AA1920109EEE00DC9712 /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -466,8 +472,10 @@
 				E0FCE8EF20052BAE00ADF707 /* GroupSettingViewController.swift in Sources */,
 				E0C7C7322000DE2600F72BA0 /* GroupInfoViewController.swift in Sources */,
 				E069761A1FFE996500DE9455 /* User.swift in Sources */,
+				9088AA1820105C3100DC9712 /* CurrencySelector.swift in Sources */,
 				E05F57B21FFBF60C001ACB9E /* LoginViewController.swift in Sources */,
 				E04BF112200CFE970082CFAA /* UserListTableViewCell.swift in Sources */,
+				9088AA1A20109EEE00DC9712 /* Currency.swift in Sources */,
 				907FF1DF2005F42600C88CE0 /* Common.swift in Sources */,
 				E0B68DA31FFFE78F005DE2C9 /* Group.swift in Sources */,
 				E0FCE8F120053A2200ADF707 /* AddUserViewController.swift in Sources */,
