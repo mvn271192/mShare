@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
-class PaidUserTableViewCell: UITableViewCell {
+class PaidUserTableViewCell: UITableViewCell, UITextFieldDelegate{
 
+    @IBOutlet weak var amountTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profilePicImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    func setUserData(user:mUser)
+    func setUserData(user:mUser, isMultiple: Bool)
     {
         nameLabel?.text = user.name
+        amountTextField.isHidden = !isMultiple
+        amountTextField.delegate = self
+        
         DispatchQueue.global(qos: .background).async {
             
             let photoURL = user.photoURL
@@ -43,6 +48,24 @@ class PaidUserTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    // MARK: - TextField Delegates
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let countdots = (textField.text?.components(separatedBy: ["."]).count)! - 1
+        
+        if countdots > 0 && string == "."
+        {
+            return false
+        }
+        
+        let aSet = NSCharacterSet(charactersIn:"0123456789.").inverted
+        let compSepByCharInSet = string.components(separatedBy: aSet)
+        let numberFiltered = compSepByCharInSet.joined(separator: "")
+        return string == numberFiltered
+        
     }
     
 }

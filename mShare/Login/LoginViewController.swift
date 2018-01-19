@@ -80,7 +80,19 @@ class LoginViewController: UIViewController ,FUIAuthDelegate{
     func insertUser(_ user: User) -> mUser
     {
         let userData = mUser(authData: user)
-        self.userRef.child(user.uid).setValue(userData.toAnyObject())
+        userRef.child(user.uid).observeSingleEvent(of: .value) { (snapshot) in
+            
+            if snapshot.exists()
+            {
+                
+            }
+            else
+            {
+                self.userRef.child(user.uid).setValue(userData.toAnyObject())
+            }
+        }
+        
+        
         return userData
     }
     

@@ -120,7 +120,11 @@ class AddExpenceViewController: UIViewController, UIGestureRecognizerDelegate {
     }
    
     
-
+    @IBAction func backButtonClick(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func toolbarButtonClick(_ sender: Any) {
         let btn = sender as! UIButton
         let tag = btn.tag
