@@ -9,11 +9,19 @@
 import UIKit
 import SkyFloatingLabelTextField
 
+protocol PaidUserCellDelegate:NSObjectProtocol {
+    func textField(textField: UITextField, currentValue: String, user: mUser)
+}
+
 class PaidUserTableViewCell: UITableViewCell, UITextFieldDelegate{
 
+    weak var delegate:PaidUserCellDelegate?
+    
     @IBOutlet weak var amountTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profilePicImageView: UIImageView!
+    var user:mUser!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,6 +31,7 @@ class PaidUserTableViewCell: UITableViewCell, UITextFieldDelegate{
         nameLabel?.text = user.name
         amountTextField.isHidden = !isMultiple
         amountTextField.delegate = self
+        self.user = user
         
         DispatchQueue.global(qos: .background).async {
             
@@ -61,11 +70,31 @@ class PaidUserTableViewCell: UITableViewCell, UITextFieldDelegate{
             return false
         }
         
+        
+        
         let aSet = NSCharacterSet(charactersIn:"0123456789.").inverted
         let compSepByCharInSet = string.components(separatedBy: aSet)
         let numberFiltered = compSepByCharInSet.joined(separator: "")
-        return string == numberFiltered
+        if (string == numberFiltered)
+        {
+            var newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
+            if ((self.delegate) != nil)
+            {
+                let  char = string.cString(using: String.Encoding.utf8)!
+                let isBackSpace = strcmp(char, "\\b")
+                if isBackSpace == -92 , newString.isEmpty
+                {
+                    newString = "0"
+                }
+                self.delegate?.textField(textField: textField, currentValue: newString , user: user)
+            }
+            return true
+            
+        }
+        
+        return false
         
     }
+    
     
 }

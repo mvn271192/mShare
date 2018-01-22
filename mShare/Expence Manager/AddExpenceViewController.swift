@@ -58,7 +58,14 @@ class AddExpenceViewController: UIViewController, UIGestureRecognizerDelegate {
         {
             blurView = common.getBlurEffectView(view: self.view)
         }
-        let memberListView = PaidView(group: selectedGroup , view: self.view)
+        var totalAmt:Float = 0.00
+      if let total = (amountTextField?.text)
+        
+      {
+        totalAmt = (total as NSString).floatValue
+        
+        }
+        let memberListView = PaidView(group: selectedGroup , view: self.view, total:Float(totalAmt))
         memberListView.didSelectedItem = { (selectedItem ) in
             
             self.paidButton.setTitle(selectedItem.name, for: .normal)
