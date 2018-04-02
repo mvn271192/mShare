@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         // Override point for customization after application .
         FirebaseApp.configure()
        // Database.database().isPersistenceEnabled = true
-//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
 //        GIDSignIn.sharedInstance().delegate = self
         return true
     }
@@ -53,6 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        // handled to go back to application after google log in
+        let handled = GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+        
+        return handled
+    }
 }
 
